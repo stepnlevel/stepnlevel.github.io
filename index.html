@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Molecul Merge</title>
+  <link rel="icon" href="img/Iconca 2с.png" type="image/png">
+
+  <style>
+    /* === Общий стиль === */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('img/01.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #e9f9ff;
+    }
+    
+    header {
+      padding: 60px 20px 30px;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+
+    /* === Карусель === */
+    .carousel {
+      max-width: 280px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 255, 200, 0.2);
+      flex-shrink: 0;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 15px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+    
+    /* Контейнер видео-карусели */
+    .video-carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      aspect-ratio: 16/9;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 80px rgba(0, 255, 200, 0.25);
+    }
+
+    /* Видео */
+    .video-item {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-item.active {
+      display: block;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Кнопки "влево/вправо" */
+    .video-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(11, 15, 25, 0.7);
+      color: #00ffc8;
+      border: none;
+      font-size: 30px;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 5;
+    }
+
+    .video-nav:hover {
+      background: rgba(0, 255, 200, 0.8);
+      color: #0b0f19;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .video-nav.prev {
+      left: 15px;
+    }
+
+    .video-nav.next {
+      right: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .video-carousel {
+        width: 90%;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+
+    /* === Блок информации === */
+    .info-block {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 420px;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #00ffd5;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #00ffd5;
+      font-size: 70px;
+      margin-bottom: 10px;
+    }
+
+    .info-block p {
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn.ios {
+      background-color: #007aff;
+    }
+
+    .btn.android {
+      background-color: #3ddc84;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    a {
+      color: #00ffd5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2><img src="img/Iconca 2с.png" width="60" height="60"> Molecul Merge</h2>
+    <p id="desc2">
+      Merge strange monsters!
+    </p>
+    
+  <div class="container">
+    <div class="carousel">
+      <img src="img/IPhone screen 01.jpg" class="active">
+      <img src="img/IPhone screen 02.jpg">
+      <img src="img/IPhone screen 03.jpg">
+      <img src="img/IPhone screen 04.jpg">
+      <img src="img/IPhone screen 05.jpg">
+      <img src="img/IPhone screen 07.jpg">
+      <img src="img/IPhone screen 09.jpg">
+    </div>
+
+    <div class="info-block">
+      <h1><img src="img/Iconca 2с.png" width="40" height="40"> ABOUT GAME</h1>
+      <p id="desc">
+        Welcome to Molecul Merge – a laboratory where the most ridiculous and funny creatures are born! Your task is to throw mutated monsters into a test tube, connect identical ones and watch as they transform into something bigger... and much stranger! How to play? Simply drag monsters into the flask, match identical ones and merge them to get new, larger and incredibly funny creatures. Press the red button if the situation becomes critical! The "Shaker" and "Small Monster Removal" functions will help you.
+      </p>
+
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/ua/app/molecul-merge-%D0%B8%D0%B3%D1%80%D0%B0-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5/id6753990749?l=ru" class="btn ios" id="iosBtn">Download for iOS</a>
+        <a href="https://play.google.com/store/apps/details?id=com.StepNlevel.MoleculMerge" class="btn android" id="androidBtn">Download for Android</a>
+      </div>
+
+      
+      <p>
+        <a href="https://docs.google.com/document/d/e/2PACX-1vRZ4AsihUcJ_xS8ahQiwvJqLH0Gbrf4gjR6YVwsMLZbZyENLN5Imn7ylOoZHSnx9W1KGLpo1o53pI7L/pub" id="pp-ios">Privacy Policy (iOS)</a> |
+        <a href="https://docs.google.com/document/d/e/2PACX-1vQIoRzbWR1uX1ADIRrKF5SSlL8zBWydzYP5tfJ4hXAD-s_EXiAqXXzZ8VK2sOA9bBYbbUQpnrhYM6M9/pub" id="pp-android">Privacy Policy (Android)</a> <br>
+        <a href="https://docs.google.com/document/d/e/2PACX-1vSA6Oyd3FyTRsrggaViDNp16Agb7cX2pEYElngRSskWloP4zPfLr-DGvtdg7ohvrEJ8OvhoN_X_HGhj/pub" id="tos-ios">Terms (iOS)</a> |
+        <a href="https://docs.google.com/document/d/e/2PACX-1vSd1ViI4V_uBpW-hP-_CsKeMYE8eqgWl_cY7KE6atuuo5hfA_H-I7t-Kjv110AsM_1BRavN3gGeD7ll/pub" id="tos-android">Terms (Android)</a>
+      </p>
+
+      <p>
+        <a href="mailto:stepnlevel@gmail.com">📧 Email</a> |
+        <a href="https://t.me/chto_za_igra">💬 Telegram</a>
+      </p>
+    </div>
+  </div>
+
+    <!-- === Видео-карусель Molecul Merge === -->
+    <div class="video-carousel" id="videoCarousel">
+      <div class="video-item active">
+        <iframe src="https://www.youtube.com/embed/AANAP2W29zo" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/agVKCoe9uOY" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/Be-4P7kTxIQ" allowfullscreen></iframe>
+      </div>
+
+      <!-- Стрелки управления -->
+      <button class="video-nav prev" onclick="changeVideo(-1)">&#10094;</button>
+      <button class="video-nav next" onclick="changeVideo(1)">&#10095;</button>
+    </div>
+
+  <footer>© 2025 Molecul Merge</footer>
+
+  <script>
+    /* === Карусель === */
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 3000);
+
+    // === Простая карусель для YouTube-видео ===
+    const videos = document.querySelectorAll("#videoCarousel .video-item");
+    let videoIndex = 0;
+
+    function showVideo(index) {
+      videos.forEach(v => v.classList.remove("active"));
+      videos[index].classList.add("active");
+    }
+
+    function changeVideo(step) {
+      videoIndex = (videoIndex + step + videos.length) % videos.length;
+      showVideo(videoIndex);
+    }
+
+    // Автоматическое переключение каждые 10 секунд
+    setInterval(() => changeVideo(1), 10000);
+
+    /* === Автоматический язык === */
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang.startsWith('ru')) {
+      document.getElementById('desc').textContent =
+        "Добро пожаловать в Molecul Merge – лабораторию, где рождаются самые нелепые и забавные существа! Ваша задача – бросать в пробирку мутировавших монстров, соединять одинаковых и наблюдать, как они превращаются в нечто большее… и гораздо страннее! Как играть? Просто перетаскивай монстров в колбу, сопоставляй одинаковых и объединяй их, чтобы получить новых, более крупных и невероятно смешных существ. Жми на красную кнопку, если ситуация становится критической! Функции 'Шейкер' и 'Удаление мелких монстров' помогут тебе.";
+      document.getElementById('desc2').textContent =
+      "Сливай странных монстров!";
+      document.getElementById('iosBtn').textContent = "Скачать для iOS";
+      document.getElementById('androidBtn').textContent = "Скачать для Android";
+      document.getElementById('pp-ios').textContent = "Политика конфиденциальности (iOS)";
+      document.getElementById('pp-android').textContent = "Политика конфиденциальности (Android)";
+      document.getElementById('tos-ios').textContent = "Условия использования (iOS)";
+      document.getElementById('tos-android').textContent = "Условия использования (Android)";
+    }
+  </script>
+
+</body>
+</html>
