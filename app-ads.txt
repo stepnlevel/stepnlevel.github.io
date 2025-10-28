@@ -1338,3 +1338,4 @@ supply.colossusssp.com, 907, RESELLER
 pubmatic.com, 167188, RESELLER, 5d62403b186f2ace
 zetaglobal.net, 512, RESELLER
 themediagrid.com, WS2D8N, RESELLER, 35d5010d7789b49d
+vungle.com, 68778a2c0bfb80001188d9b3, DIRECT, c107d686becd2d77
